@@ -31,7 +31,6 @@ const getSum = () => {
     // Disable the button after clicking to prevent duplicate rows
     getSumBtn.disabled = true;
 		
-  
 };
 
 getSumBtn.addEventListener("click", getSum);
