@@ -4,6 +4,10 @@ document.body.appendChild(getSumBtn);
 
 const getSum = () => {
 //Add your code here
+	const getSum = () => {
+    // Select all price elements
+    const prices = document.querySelectorAll(".price");
+		
   
 };
 
