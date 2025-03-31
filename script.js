@@ -4,7 +4,7 @@ document.body.appendChild(getSumBtn);
 
 const getSum = () => {
 //Add your code here
-	 // Select all price elements
+	  // Select all price elements
     const prices = document.querySelectorAll(".price");
 
     // Calculate the total sum
@@ -13,23 +13,27 @@ const getSum = () => {
         total += parseInt(price.innerText);
     });
 
-	 // Create a new row for total price
+    // Check if total row already exists and remove it
+    const existingTotalRow = document.getElementById("ans");
+    if (existingTotalRow) {
+        existingTotalRow.remove();
+    }
+
+    // Create a new row for total price
     const table = document.querySelector("table");
     const totalRow = document.createElement("tr");
+    totalRow.setAttribute("id", "ans"); // Ensure Cypress can find this element
 
-	// Create a single cell that spans both columns
+    // Create a single cell that spans both columns
     const totalCell = document.createElement("td");
     totalCell.setAttribute("colspan", "2");
     totalCell.style.textAlign = "center";
     totalCell.style.fontWeight = "bold";
     totalCell.innerText = `Total Price: Rs ${total}`;
 
- // Append cell to row and row to table
+    // Append cell to row and row to table
     totalRow.appendChild(totalCell);
     table.appendChild(totalRow);
-
-    // Disable the button after clicking to prevent duplicate rows
-    getSumBtn.disabled = true;
 		
 };
 
