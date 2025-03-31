@@ -23,6 +23,13 @@ const getSum = () => {
     totalCell.style.textAlign = "center";
     totalCell.style.fontWeight = "bold";
     totalCell.innerText = `Total Price: Rs ${total}`;
+
+ // Append cell to row and row to table
+    totalRow.appendChild(totalCell);
+    table.appendChild(totalRow);
+
+    // Disable the button after clicking to prevent duplicate rows
+    getSumBtn.disabled = true;
 		
   
 };
